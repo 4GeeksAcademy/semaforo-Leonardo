@@ -1,26 +1,20 @@
 import React from "react";
+import LuzSemaforo from "./LuzSemaforo";
 
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
-
-//create your first component
+// Create your first component
 const Home = () => {
 	return (
-		<div className="text-center">
-			<h1 className="text-center mt-5">Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				Leonardo
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
+		<div className="container">
+			<div className="row justify-content-center mt-5">
+				<div className="col-4 mt-2">
+					<div id="semaforo" className="text-center">
+						<LuzSemaforo color="verde" />
+						<LuzSemaforo color="amarillo" />
+						<LuzSemaforo color="rojo" />
+					</div>
+				</div>
+			</div>
 		</div>
 	);
 };
-
 export default Home;
