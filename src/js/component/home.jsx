@@ -1,26 +1,41 @@
-import React from "react";
+import React, { useState } from "react";
+import LuzSemaforo from "./LuzSemaforo";
 
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
-
-//create your first component
+// Crea tu primer componente
 const Home = () => {
-	return (
-		<div className="text-center">
-			<h1 className="text-center mt-5">Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working...
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
-		</div>
-	);
+    const [brillo, setBrillo] = useState(false);
+    const [colorActivo, setColorActivo] = useState(null);
+
+    const toggleBrillo = (color) => {
+        setBrillo(prev => !prev);
+        setColorActivo(color);
+    };
+
+    return (
+        <div className="container">
+            <div className="row justify-content-center mt-5">
+                <div className="col-12 col-md-3 mt-5">
+                    <div id="semaforo" className="text-center">
+                        <LuzSemaforo 
+                            color="verde"                              
+                            onClick={() => toggleBrillo("verde")} 
+                            isActive={colorActivo === "verde"}
+                        />
+                        <LuzSemaforo 
+                            color="amarillo"							
+                            onClick={() => toggleBrillo("amarillo")} 
+                            isActive={colorActivo === "amarillo"}
+                        />
+                        <LuzSemaforo 
+                            color="rojo"
+                            onClick={() => toggleBrillo("rojo")} 
+                            isActive={colorActivo === "rojo"}
+                        />
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
 };
 
 export default Home;
