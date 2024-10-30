@@ -7,8 +7,7 @@ const LuzSemaforo = ({ color, brillo, onClick, isActive }) => {
     return (
         <button 
             id={brillo} 
-            className={`${color} ${brilloClass} ${activeClass} mt-4 mb-4`} 
-            
+            className={`${color} ${brilloClass} ${activeClass} mt-4 mb-4`}             
             onClick={onClick}
         >
         </button>
