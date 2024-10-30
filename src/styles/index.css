@@ -31,8 +31,10 @@
     align-items: center;
 }
 
-#encendido{
-    width: 900px;
-    height: 500px;
-    color: aqua;
+.brillo {
+    box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.8);
+}
+
+.active {
+    box-shadow: 0 0 20px 10px rgba(247, 255, 200, 0.8); /* Ajusta el color y tamaño según lo desees */
 }
