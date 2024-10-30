@@ -14,7 +14,7 @@ const Home = () => {
     return (
         <div className="container">
             <div className="row justify-content-center mt-5">
-                <div className="col-3 mt-5">
+                <div className="col-12 col-md-3 mt-5">
                     <div id="semaforo" className="text-center">
                         <LuzSemaforo 
                             color="verde"                              
